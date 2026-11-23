@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo académico de 39 pseudoclases estándar de CSS con demostraciones prácticas.">
+  <title>Pseudoclases CSS</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Pseudoclases CSS</h1>
+    <p>Catálogo de 39 pseudoclases estándar de CSS</p>
+
+    <nav aria-label="Categorías de pseudoclases">
+        <ul>
+          <li><a href="#interaccion">Interacción</a></li>
+          <li><a href="#formularios">Formularios</a></li>
+          <li><a href="#estructurales">Estructurales</a></li>
+          <li><a href="#navegacion">Navegación</a></li>
+          <li><a href="#documento-entorno">Documento y entorno</a></li>
+          <li><a href="#selectores-logicos">Selectores lógicos</a></li>
+        </ul>
+      </nav>
+  </header>
+
+  <main>
+      <section id="interaccion">
+        <h2>Interacción</h2>
+        <p>Pseudoclases que responden a la interacción directa del usuario con la página.</p>
+
+          <article id="pseudo-active">
+            <h3>:active</h3>
+            <p>Se aplica mientras un elemento está siendo activado por el usuario, por ejemplo al pulsar un botón.</p>
+            <div class="demo">
+              <button class="boton-active">Presióname</button>
+            </div>
+          </article>
+
+          <article id="pseudo-focus">
+            <h3>:focus</h3>
+            <p>Se aplica a un elemento que tiene el foco, como un campo seleccionado o un enlace alcanzado con el teclado.</p>
+            <div class="demo">
+              <input class="text-input" type="text" placeholder="Haz clic o usa Tab">
+            </div>
+          </article>
+
+          <article id="pseudo-hover">
+            <h3>:hover</h3>
+            <p>Se aplica cuando el puntero del ratón se sitúa sobre un elemento.</p>
+            <div class="demo">
+              <div class="hover-box">Pasa el cursor por aquí</div>
+            </div>
+          </article>
+      </section>
+
+      <section id="formularios">
+        <h2>Formularios</h2>
+        <p>Pseudoclases relacionadas con el estado y la validación de los controles de formulario.</p>
+
+          <article id="pseudo-checked">
+            <h3>:checked</h3>
+            <p>Se aplica a controles de formulario marcados, como casillas de verificación o botones de opción.</p>
+            <div class="demo">
+              <label class="option"><input type="checkbox"><span>Activar esta casilla</span></label>
+            </div>
+          </article>
+
+          <article id="pseudo-default">
+            <h3>:default</h3>
+            <p>Se aplica al control de formulario que se considera predeterminado dentro de un grupo.</p>
+            <div class="demo">
+              <label class="option"><input type="radio" name="default-demo" checked><span>Opción predeterminada</span></label>
+              <label class="option"><input type="radio" name="default-demo"><span>Otra opción</span></label>
+            </div>
+          </article>
+
+          <article id="pseudo-disabled">
+            <h3>:disabled</h3>
+            <p>Se aplica a controles de formulario deshabilitados, que no pueden usarse ni recibir foco.</p>
+            <div class="demo">
+              <input class="text-input" type="text" value="Campo deshabilitado" disabled>
+            </div>
+          </article>
+
+          <article id="pseudo-enabled">
+            <h3>:enabled</h3>
+            <p>Se aplica a controles de formulario habilitados y disponibles para la interacción.</p>
+            <div class="demo">
+              <input class="text-input" type="text" value="Campo habilitado">
+            </div>
+          </article>
+
+          <article id="pseudo-indeterminate">
+            <h3>:indeterminate</h3>
+            <p>Se aplica a controles cuyo estado es indeterminado, como una casilla con estado mixto.</p>
+            <div class="demo">
+              <label class="option"><input class="indeterminate-check" type="checkbox"><span>Estado mixto</span></label>
+            </div>
+          </article>
+
+          <article id="pseudo-in-range">
+            <h3>:in-range</h3>
+            <p>Se aplica a controles cuyo valor se encuentra dentro del rango permitido.</p>
+            <div class="demo">
+              <input class="number-input" type="number" min="1" max="10" value="5">
+            </div>
+          </article>
+
+          <article id="pseudo-invalid">
+            <h3>:invalid</h3>
+            <p>Se aplica a controles cuyo valor no cumple las reglas de validación.</p>
+            <div class="demo">
+              <input class="text-input" type="email" value="correo-sin-arroba" required>
+            </div>
+          </article>
+
+          <article id="pseudo-optional">
+            <h3>:optional</h3>
+            <p>Se aplica a controles de formulario que no son obligatorios.</p>
+            <div class="demo">
+              <input class="text-input" type="text" placeholder="Campo opcional">
+            </div>
+          </article>
+
+          <article id="pseudo-out-of-range">
+            <h3>:out-of-range</h3>
+            <p>Se aplica a controles cuyo valor se encuentra fuera del rango permitido.</p>
+            <div class="demo">
+              <input class="number-input" type="number" min="1" max="10" value="15">
+            </div>
+          </article>
+
+          <article id="pseudo-read-only">
+            <h3>:read-only</h3>
+            <p>Se aplica a elementos que el usuario no puede modificar.</p>
+            <div class="demo">
+              <input class="text-input" type="text" value="No se puede editar" readonly>
+            </div>
+          </article>
+
+          <article id="pseudo-read-write">
+            <h3>:read-write</h3>
+            <p>Se aplica a elementos editables por el usuario.</p>
+            <div class="demo">
+              <input class="text-input" type="text" value="Este texto se puede editar">
+            </div>
+          </article>
+
+          <article id="pseudo-required">
+            <h3>:required</h3>
+            <p>Se aplica a controles de formulario que son obligatorios.</p>
+            <div class="demo">
+              <input class="text-input" type="text" placeholder="Campo obligatorio" required>
+            </div>
+          </article>
+
+          <article id="pseudo-valid">
+            <h3>:valid</h3>
+            <p>Se aplica a controles cuyo valor cumple las reglas de validación.</p>
+            <div class="demo">
+              <input class="text-input" type="email" value="alumno@ejemplo.com">
+            </div>
+          </article>
+      </section>
+
+      <section id="estructurales">
+        <h2>Estructurales</h2>
+        <p>Pseudoclases basadas en la posición y la estructura del árbol del documento.</p>
+
+          <article id="pseudo-empty">
+            <h3>:empty</h3>
+            <p>Se aplica a elementos que no contienen hijos ni texto.</p>
+            <div class="demo">
+              <div class="empty-row">
+                <div class="empty-box"></div>
+                <div class="empty-box">Con contenido</div>
+              </div>
+            </div>
+          </article>
+
+          <article id="pseudo-first-child">
+            <h3>:first-child</h3>
+            <p>Se aplica al primer hijo dentro de su elemento padre.</p>
+            <div class="demo">
+              <ul class="demo-list">
+                <li>Primer elemento</li>
+                <li>Segundo elemento</li>
+                <li>Tercer elemento</li>
+              </ul>
+            </div>
+          </article>
+
+          <article id="pseudo-first-of-type">
+            <h3>:first-of-type</h3>
+            <p>Se aplica al primer elemento de su tipo dentro de su padre.</p>
+            <div class="demo">
+              <div class="mixed-box">
+                <p>Primer párrafo</p>
+                <span>Un texto distinto</span>
+                <p>Segundo párrafo</p>
+              </div>
+            </div>
+          </article>
+
+          <article id="pseudo-last-child">
+            <h3>:last-child</h3>
+            <p>Se aplica al último hijo dentro de su elemento padre.</p>
+            <div class="demo">
+              <ul class="demo-list">
+                <li>Primer elemento</li>
+                <li>Segundo elemento</li>
+                <li>Tercer elemento</li>
+              </ul>
+            </div>
+          </article>
+
+          <article id="pseudo-last-of-type">
+            <h3>:last-of-type</h3>
+            <p>Se aplica al último elemento de su tipo dentro de su padre.</p>
+            <div class="demo">
+              <div class="mixed-box">
+                <p>Primer párrafo</p>
+                <span>Un texto distinto</span>
+                <p>Segundo párrafo</p>
+              </div>
+            </div>
+          </article>
+
+          <article id="pseudo-nth-child">
+            <h3>:nth-child()</h3>
+            <p>Se aplica a elementos según su posición entre los hijos de su padre.</p>
+            <div class="demo">
+              <ul class="demo-list">
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+                <li>Elemento 3</li>
+                <li>Elemento 4</li>
+                <li>Elemento 5</li>
+              </ul>
+            </div>
+          </article>
+
+          <article id="pseudo-nth-last-child">
+            <h3>:nth-last-child()</h3>
+            <p>Se aplica a elementos según su posición contando desde el final de los hijos de su padre.</p>
+            <div class="demo">
+              <ul class="demo-list">
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+                <li>Elemento 3</li>
+                <li>Elemento 4</li>
+                <li>Elemento 5</li>
+              </ul>
+            </div>
+          </article>
+
+          <article id="pseudo-nth-last-of-type">
+            <h3>:nth-last-of-type()</h3>
+            <p>Se aplica a elementos de un mismo tipo según su posición desde el final.</p>
+            <div class="demo">
+              <div class="mixed-box">
+                <p>Párrafo 1</p>
+                <p>Párrafo 2</p>
+                <p>Párrafo 3</p>
+                <p>Párrafo 4</p>
+              </div>
+            </div>
+          </article>
+
+          <article id="pseudo-nth-of-type">
+            <h3>:nth-of-type()</h3>
+            <p>Se aplica a elementos de un mismo tipo según su posición entre sus hermanos.</p>
+            <div class="demo">
+              <ul class="demo-list">
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+                <li>Elemento 3</li>
+                <li>Elemento 4</li>
+                <li>Elemento 5</li>
+              </ul>
+            </div>
+          </article>
+
+          <article id="pseudo-only-child">
+            <h3>:only-child</h3>
+            <p>Se aplica a un elemento que es el único hijo de su padre.</p>
+            <div class="demo">
+              <div class="only-row">
+                <div class="family">
+                  <p>Hijo único</p>
+                </div>
+                <div class="family">
+                  <p>Primer hijo</p>
+                  <p>Segundo hijo</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article id="pseudo-only-of-type">
+            <h3>:only-of-type</h3>
+            <p>Se aplica a un elemento que es el único de su tipo entre los hijos de su padre.</p>
+            <div class="demo">
+              <div class="mixed-box">
+                <p>Párrafo uno</p>
+                <p>Párrafo dos</p>
+                <span>Único span</span>
+              </div>
+            </div>
+          </article>
+      </section>
+
+      <section id="navegacion">
+        <h2>Navegación</h2>
+        <p>Pseudoclases que describen el estado de los enlaces y la navegación por fragmentos.</p>
+
+          <article id="pseudo-link">
+            <h3>:link</h3>
+            <p>Se aplica a enlaces que todavía no han sido visitados.</p>
+            <div class="demo">
+              <a href="index.html">Enlace pendiente de visitar</a>
+            </div>
+          </article>
+
+          <article id="pseudo-visited">
+            <h3>:visited</h3>
+            <p>Se aplica a enlaces que ya han sido visitados.</p>
+            <div class="demo">
+              <p class="note">Haz clic en el enlace, vuelve a esta página y observa el color. Los navegadores limitan los estilos de <code>:visited</code> por privacidad.</p>
+              <a href="index.html">Enlace para visitar</a>
+            </div>
+          </article>
+
+          <article id="pseudo-target">
+            <h3>:target</h3>
+            <p>Se aplica al elemento cuyo identificador coincide con el fragmento de la URL actual.</p>
+            <div class="demo">
+              <p>
+                <a href="#target-a">Mostrar destino A</a>
+                <span>·</span>
+                <a href="#target-b">Mostrar destino B</a>
+              </p>
+              <div class="target-row">
+                <div class="target-box" id="target-a">Destino A</div>
+                <div class="target-box" id="target-b">Destino B</div>
+              </div>
+            </div>
+          </article>
+      </section>
+
+      <section id="documento-entorno">
+        <h2>Documento y entorno</h2>
+        <p>Pseudoclases vinculadas al documento, su idioma, su orientación y contextos especiales.</p>
+
+          <article id="pseudo-dir">
+            <h3>:dir()</h3>
+            <p>Se aplica a elementos según la dirección del texto, como izquierda a derecha o derecha a izquierda.</p>
+            <div class="demo">
+              <p class="dir-text" dir="ltr">Texto con dirección de izquierda a derecha.</p>
+              <p class="dir-text" dir="rtl">Texto con dirección de derecha a izquierda.</p>
+            </div>
+          </article>
+
+          <article id="pseudo-fullscreen">
+            <h3>:fullscreen</h3>
+            <p>Se aplica al elemento que se encuentra en modo de pantalla completa.</p>
+            <div class="demo">
+              <div class="fullscreen-box">
+                <p>Esta caja cambia cuando entra en pantalla completa.</p>
+                <button class="fullscreen-button">Activar pantalla completa</button>
+              </div>
+            </div>
+          </article>
+
+          <article id="pseudo-first">
+            <h3>:first</h3>
+            <p>Se aplica a la primera página de un documento paginado, por ejemplo al imprimir.</p>
+            <div class="demo">
+              <p class="note">Pulsa Ctrl+P y observa el margen de la primera página.</p>
+              <div class="print-sample">Contenido de ejemplo para impresión.</div>
+            </div>
+          </article>
+
+          <article id="pseudo-lang">
+            <h3>:lang()</h3>
+            <p>Se aplica a elementos según el idioma declarado para su contenido.</p>
+            <div class="demo">
+              <p class="lang-text" lang="es">Este párrafo está en español.</p>
+              <p class="lang-text" lang="en">This paragraph is in English.</p>
+            </div>
+          </article>
+
+          <article id="pseudo-left">
+            <h3>:left</h3>
+            <p>Se aplica a las páginas izquierdas de un documento paginado.</p>
+            <div class="demo">
+              <p class="note">Pulsa Ctrl+P y observa el margen de las páginas izquierdas.</p>
+              <div class="print-sample">Contenido de ejemplo para impresión.</div>
+            </div>
+          </article>
+
+          <article id="pseudo-right">
+            <h3>:right</h3>
+            <p>Se aplica a las páginas derechas de un documento paginado.</p>
+            <div class="demo">
+              <p class="note">Pulsa Ctrl+P y observa el margen de las páginas derechas.</p>
+              <div class="print-sample">Contenido de ejemplo para impresión.</div>
+            </div>
+          </article>
+
+          <article id="pseudo-root">
+            <h3>:root</h3>
+            <p>Se aplica al elemento raíz del documento.</p>
+            <div class="demo">
+              <div class="root-box">Esta caja usa una variable definida en :root.</div>
+            </div>
+          </article>
+
+          <article id="pseudo-scope">
+            <h3>:scope</h3>
+            <p>Se aplica al elemento que actúa como referencia de alcance en una consulta.</p>
+            <div class="demo">
+              <ul class="scope-list">
+                <li>Hijo directo
+                  <ul>
+                    <li>Nieto</li>
+                  </ul>
+                </li>
+                <li>Otro hijo directo</li>
+              </ul>
+              <button class="scope-button">Resaltar hijos directos</button>
+            </div>
+          </article>
+      </section>
+
+      <section id="selectores-logicos">
+        <h2>Selectores lógicos</h2>
+        <p>Pseudoclases que permiten construir selecciones a partir de condiciones lógicas.</p>
+
+          <article id="pseudo-not">
+            <h3>:not()</h3>
+            <p>Se aplica a los elementos que no coinciden con el selector indicado.</p>
+            <div class="demo">
+              <ul class="demo-list">
+                <li>Elemento incluido</li>
+                <li class="excluded">Elemento excluido</li>
+                <li>Otro elemento incluido</li>
+              </ul>
+            </div>
+          </article>
+      </section>
+  </main>
+
+  <footer>
+  </footer>
+</body>
+</html>
